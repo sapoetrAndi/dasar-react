@@ -67,3 +67,66 @@ const App = () => {
 
 export default App;
 
+6. Root Component, Parent Component, Child Component
+
+
+7. state
+secara sederhana state adalah data yang akan kita tampilkan didalam component. namun secara teknis state adalah sebuah object yang menampung properti dari data data yang akan kita tampilkan dalam component
+
+ini adalah state
+state = {
+    book:{
+        name: "Whose child is this?",
+        author: "Bill Willson",
+    }
+}
+cara memanggil state menggunakan object
+render(){
+    return(
+        <div>
+            <h1>Halo Andi Saputra</h1>
+            <h3>{this.state.name}</h3>
+            <h3>{this.state.author}</h3>
+        </div>
+    )
+}
+
+state = {
+    books:["Whose child is this?", "Chicken soup for the soul"]
+}
+
+cara memanggil state menggunakan array
+render(){
+    return(
+        <div>
+            <h1>Halo Andi Saputra</h1>
+            {this.state.books.map(item => 
+                <div>
+                    <h3>{item}</h3>
+                </div>
+            )}
+        </div>
+    )
+}
+
+8. props
+prop adalah properti. jadi kita dapat mengirim properti dari komponen Parent ke komponen child namun tidak bisa sebaliknya
+
+cara membuat props:
+<List name="kodeakademia" test="test" book={this.state.book}>
+    <h4>This is my list</h4>
+    <p>oh my paragraph</p>
+</List>
+
+cara menggunakan props:
+render(){
+    return(
+        <div>
+            <h2>{this.props.children}</h2>
+            <h3>{this.props.name}</h3>
+            <h4>{this.props.book}</h4>
+            <p>{this.props.test}</p>
+            <ListItem/>
+        </div>
+    )
+}
