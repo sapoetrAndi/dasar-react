@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import List from "./List";
+import Button from "./Button";
 
 
 
@@ -8,15 +9,24 @@ import List from "./List";
 //1. menggunakan class
 class App extends React.Component{
     state = {
-        book: "Chicken soup for the soul"
+        book: "Chicken soup for the soul",
+        name: "kodekademia"
     }
+
+    change = () => {
+        console.log("OK");
+        this.setState({
+            name: "andi saputra"
+        })
+    }
+
     render(){
         return(
         <div>
-            <List name="kodeakademia" test="test" book={this.state.book}>
-                <h4>This is my list</h4>
-                <p>oh my paragraph</p>
-            </List>
+            <h1>{this.state.name}</h1>
+            <button onClick={this.change}>click</button>
+            {/* <List test="test" book={this.state.book}/>
+            <Button color="biru"/> */}
         </div>
         )
     }

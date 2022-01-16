@@ -119,6 +119,7 @@ cara membuat props:
 </List>
 
 cara menggunakan props:
+elemen dalam tag list akan menjadi props children
 render(){
     return(
         <div>
@@ -130,3 +131,19 @@ render(){
         </div>
     )
 }
+
+9. container presentasional component
+    component dibagi 2, yaitu:
+    - component digunakan untuk menampung data (container component). component ini juga disebut stateful component karena memiliki state di dalamnya. contohnya: component App
+    - component digunakan untuk tampilan (presentasional component). component ini juga disebut stateless component karena tidak memiliki state di dalamnya. contohnya: component List
+
+10. prop-types & default props
+prop-types digunakan untuk menge-cek props yang masuk kedalam sebuah component yang bertujuan untuk memastikan bahwa props yang masuk ke component itu sesuai dengan yang kita harapkan.
+
+sedangkan default props adalah nilai default ketika props tidak di deklarasikan.
+
+11. event
+events docs : https://developer.mozilla.org/en-US/docs/Web/Events
+
+12. set state
+set state adalah sebuah function yang disediakan oleh react untuk mengubah state. di react kita tidak diperbolehkan mengubah state secara langsung.
