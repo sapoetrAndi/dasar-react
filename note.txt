@@ -135,7 +135,7 @@ render(){
 9. container presentasional component
     component dibagi 2, yaitu:
     - component digunakan untuk menampung data (container component). component ini juga disebut stateful component karena memiliki state di dalamnya. contohnya: component App
-    - component digunakan untuk tampilan (presentasional component). component ini juga disebut stateless component karena tidak memiliki state di dalamnya. contohnya: component List
+    - component digunakan           untuk tampilan (presentasional component). component ini juga disebut stateless component karena tidak memiliki state di dalamnya. contohnya: component List
 
 10. prop-types & default props
 prop-types digunakan untuk menge-cek props yang masuk kedalam sebuah component yang bertujuan untuk memastikan bahwa props yang masuk ke component itu sesuai dengan yang kita harapkan.
@@ -147,3 +147,54 @@ events docs : https://developer.mozilla.org/en-US/docs/Web/Events
 
 12. set state
 set state adalah sebuah function yang disediakan oleh react untuk mengubah state. di react kita tidak diperbolehkan mengubah state secara langsung.
+
+13. form handling
+
+class App extends React.Component{
+    state = {
+        book: "Chicken soup for the soul",
+        name: "kodekademia",
+        text: "",
+    }
+
+    click = () => {
+        this.setState({
+            name: this.state.text
+        })
+
+        this.setState({
+            text: ""
+        })
+    }
+
+    change = e => {
+        this.setState({
+            text: e.target.value
+        })
+    }
+
+    render(){
+        return(
+        <div>
+            <h1>{this.state.name}</h1>
+            <input type="text" value={this.state.text} onChange={this.change}/>
+            <button onClick={this.click}>click</button>
+            {/* <List test="test" book={this.state.book}/>
+            <Button color="biru"/> */}
+        </div>
+        )
+    }
+}
+
+export default App;
+
+14. pebedaan class dan function component
+sebelum react versi 16 untuk membuat state hanya bisa dilakukan di class component sedangkan di function component tidak. untuk versi saat ini kita membuat state menggunakan hooks.
+
+15. styling component di react
+
+ada 4 cara:
+1. inline style
+2. external css
+3. css preprocessor
+4. library : styled-component
